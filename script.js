@@ -3,6 +3,13 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // YOUR CODE GOES HERE
+  // how many characters (8-128)
+  // uppercase?
+  // lowercase?
+  // numbers?
+  // special characters?
+
+
 }
 
 // Write password to the #password input
