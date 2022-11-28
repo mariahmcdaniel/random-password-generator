@@ -4,10 +4,12 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   // YOUR CODE GOES HERE
   // how many characters (8-128)
-  var charNum = alert('How many characters would you like?');
+  var charNum = prompt('How many characters would you like?');
+
   if (charNum < 8 || charNum > 128) {
     alert("Password must be between 8 and 128 characters, please try again");
-  }
+  };
+
   var uppercasePool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowercasePool = 'abcdefghijklmnopqrstuvwxyz';
   var numbersPool = '0123456789';
@@ -35,7 +37,14 @@ function generatePassword() {
     chooseFrom += specialPool
   };
 
-  return "";
+  var chooseFromArr = [...chooseFrom];
+  var pw = [];
+
+  for (var i = 0; i < charNum; i++) {
+    pw.push(chooseFrom.charAt(Math.floor(Math.random() * chooseFromArr.length)))
+  }
+
+  return pw.join('');
 }
 
 // Write password to the #password input
