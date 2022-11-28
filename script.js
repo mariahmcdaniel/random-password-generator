@@ -44,6 +44,19 @@ function generatePassword() {
     pw.push(chooseFrom.charAt(Math.floor(Math.random() * chooseFromArr.length)))
   }
 
+  pwString = pw.join('');
+
+  numLower = (pwString.match(/[a-z]/g) || []).length;
+  numUpper = (pwString.match(/[A-Z]/g) || []).length;
+  numNums = (pwString.match(/[0-9]/g) || []).length;
+  numSpecial = (pwString.match(/[^A-Za-z0-9]/g) || []).length;
+
+  console.log(numLower);
+  console.log(numUpper);
+  console.log(numNums);
+  console.log(numSpecial);
+
+
   return pw.join('');
 }
 
