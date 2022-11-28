@@ -25,10 +25,10 @@ function generatePassword() {
 
   })
   // uppercase?
-  if (charNum > 7 && charNum < 100) {
+  if (charNum > 7 && charNum < 128) {
     upper();
   } else {
-    alert("Password must be between 8 and 100 characters, please try again")
+    alert("Password must be between 8 and 128 characters, please try again")
   }
 
   lower();
