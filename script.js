@@ -1,46 +1,30 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// var actions = {
+//   charNum: prompt('How many characters?'),
+//   upper: confirm("Would you like uppercase letters?"),
+//   lower: confirm("Would you like lowercase letters?"),
+//   numbers: confirm("Would you like numbers?"),
+//   special: confirm("Would you like special characters?")
+// };
 function generatePassword() {
   // YOUR CODE GOES HERE
   // how many characters (8-128)
-  var charNum = function () {
-    prompt("How many characters?")
+  var charNum = alert('How many characters would you like?');
+  if (charNum < 8 || charNum > 128) {
+    alert("Password must be between 8 and 128 characters, please try again");
   }
-  var upper = function () {
-    confirm("Would you like uppercase letters?")
-  }
-  var lower = function () {
-    confirm("Would you like lowercase letters?")
-  }
-  var numbers = function () {
-    confirm("Would you like numbers?")
-  }
-  var special = function () {
-    confirm("Would you like special characters?")
-  }
-
-  generateBtn.addEventListener("click", () => {
-    charNum()
-
-  })
   // uppercase?
-  if (charNum > 7 && charNum < 128) {
-    upper();
-  } else {
-    alert("Password must be between 8 and 128 characters, please try again")
-  }
-
-  lower();
-  numbers();
-  special();
-
+  var uppercase = false;
   // lowercase?
-
+  var lowercase = false;
   // numbers?
+  var numbers = false;
   // special characters?
+  var special = false;
 
-
+  return "";
 }
 
 // Write password to the #password input
