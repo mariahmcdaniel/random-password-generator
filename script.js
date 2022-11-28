@@ -1,13 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// var actions = {
-//   charNum: prompt('How many characters?'),
-//   upper: confirm("Would you like uppercase letters?"),
-//   lower: confirm("Would you like lowercase letters?"),
-//   numbers: confirm("Would you like numbers?"),
-//   special: confirm("Would you like special characters?")
-// };
 function generatePassword() {
   // YOUR CODE GOES HERE
   // how many characters (8-128)
@@ -15,14 +8,32 @@ function generatePassword() {
   if (charNum < 8 || charNum > 128) {
     alert("Password must be between 8 and 128 characters, please try again");
   }
+  var uppercasePool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var lowercasePool = 'abcdefghijklmnopqrstuvwxyz';
+  var numbersPool = '0123456789';
+  var specialPool = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
+  var chooseFrom = '';
   // uppercase?
-  var uppercase = false;
+  var uppercase = confirm('Would you like uppercase letters?');
+  if (uppercase) {
+    chooseFrom += uppercasePool
+  };
+
   // lowercase?
-  var lowercase = false;
+  var lowercase = confirm('Would you like lowercase letters?');
+  if (lowercase) {
+    chooseFrom += lowercasePool
+  };
   // numbers?
-  var numbers = false;
+  var numbers = confirm('Would you like numbers?');
+  if (numbers) {
+    chooseFrom += numbersPool
+  };
   // special characters?
-  var special = false;
+  var special = confirm('Would you like special characters?');
+  if (special) {
+    chooseFrom += specialPool
+  };
 
   return "";
 }
