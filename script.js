@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   // YOUR CODE GOES HERE
   // how many characters (8-128)
-  var charNum = prompt('How many characters would you like?');
+  var charNum = prompt('How many characters would you like in your password?');
   var uppercasePool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowercasePool = 'abcdefghijklmnopqrstuvwxyz';
   var numbersPool = '0123456789';
@@ -18,26 +18,26 @@ function generatePassword() {
     var containsSpecial = false;
 
     // uppercase?
-    var uppercase = confirm('Would you like uppercase letters?');
+    var uppercase = confirm('Would you like your password to contain uppercase letters?');
     if (uppercase) {
       chooseFrom += uppercasePool;
       containsUpper = true;
     };
 
     // lowercase?
-    var lowercase = confirm('Would you like lowercase letters?');
+    var lowercase = confirm('Would you like your password to contain lowercase letters?');
     if (lowercase) {
       chooseFrom += lowercasePool;
       containsLower = true;
     };
     // numbers?
-    var numbers = confirm('Would you like numbers?');
+    var numbers = confirm('Would you like your password to contain numbers?');
     if (numbers) {
       chooseFrom += numbersPool;
       containsNumber = true;
     };
     // special characters?
-    var special = confirm('Would you like special characters?');
+    var special = confirm('Would you like your password to contain special characters?');
     if (special) {
       chooseFrom += specialPool;
       containsSpecial = true;
