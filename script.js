@@ -1,9 +1,7 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  // YOUR CODE GOES HERE
-  // how many characters (8-128)
+
   var charNum = prompt('How many characters would you like in your password?');
   var uppercasePool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowercasePool = 'abcdefghijklmnopqrstuvwxyz';
@@ -17,26 +15,24 @@ function generatePassword() {
     var containsNumber = false;
     var containsSpecial = false;
 
-    // uppercase?
     var uppercase = confirm('Would you like your password to contain uppercase letters?');
     if (uppercase) {
       chooseFrom += uppercasePool;
       containsUpper = true;
     };
 
-    // lowercase?
     var lowercase = confirm('Would you like your password to contain lowercase letters?');
     if (lowercase) {
       chooseFrom += lowercasePool;
       containsLower = true;
     };
-    // numbers?
+
     var numbers = confirm('Would you like your password to contain numbers?');
     if (numbers) {
       chooseFrom += numbersPool;
       containsNumber = true;
     };
-    // special characters?
+
     var special = confirm('Would you like your password to contain special characters?');
     if (special) {
       chooseFrom += specialPool;
@@ -89,31 +85,8 @@ function generatePassword() {
     alert("You must enter a number from 8-128, please try again");
     return generatePassword();
   };
-
-
-  // var numLower = (pwString.match(/[a-z]/g) || []).length;
-  // var numUpper = (pwString.match(/[A-Z]/g) || []).length;
-  // var numNums = (pwString.match(/[0-9]/g) || []).length;
-  // var numSpecial = (pwString.match(/[^A-Za-z0-9]/g) || []).length;
-
-  // var numLowerExp = numLower > 0;
-  // var numUpperExp = numUpper > 0;
-  // var numNumsExp = numNums > 0;
-  // var numSpecialExp = numSpecial > 0;
-
-  // if (numbers && !numNumsExp) {
-  //   special && numSpecialExp ? pwString.replace((pwString.search(/[^A-Za-z0-9]/g)), (Math.floor(Math.random() * 9))) : uppercase && numUpperExp ? pwString.replace((pwString.search(/[A-Z]/g)), (Math.floor(Math.random() * 9))) : pwString.replace((pwString.search(/[a-z]/g)), (Math.floor(Math.random() * 9)))
-  // } else if (lowercase && !numLowerExp) {
-  //   special && numSpecialExp ? pwString.replace((pwString.search(/[^A-Za-z0-9]/g)), (lowercasePool.charAt(Math.floor(Math.random() * 26)))) : uppercase && !numUpperExp ? pwString.replace((pwString.search(/[A-Z]/g)), (lowercasePool.charAt(Math.floor(Math.random() * 26)))) : pwString.replace((pwString.search(/[0-9]/g)), (lowercasePool.charAt(Math.floor(Math.random() * 26))))
-  // } else if (uppercase && !numUpperExp) {
-  //   special && numSpecialExp ? pwString.replace((pwString.search(/[^A-Za-z0-9]/g)), (uppercasePool.charAt(Math.floor(Math.random() * 26)))) : lowercase && numLowerExp ? pwString.replace((pwString.search(/[a-z]/g)), (uppercasePool.charAt(Math.floor(Math.random() * 26)))) : pwString.replace((pwString.search(/[0-9]/g)), (uppercasePool.charAt(Math.floor(Math.random() * 26))))
-  // } else if (special && !numSpecialExp) {
-  //   uppercase && !numUpperExp ? pwString.replace((pwString.search(/[A-Z]/g)), (specialPool.charAt(Math.floor(Math.random() * 30)))) : lowercase && numLowerExp ? pwString.replace((pwString.search(/[a-z]/g)), (specialPool.charAt(Math.floor(Math.random() * 30)))) : pwString.replace((pwString.search(/[0-9]/g)), (specialPool.charAt(Math.floor(Math.random() * 30))))
-  // }
-
 }
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -122,5 +95,4 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
