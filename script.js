@@ -68,7 +68,21 @@ function generatePassword() {
       pw.push(chooseFrom.charAt(Math.floor(Math.random() * chooseFromArr.length)))
     };
 
-    var pwString = pw.join('');
+    //using the Fisher-Yates shuffle algorithm (modern version)  
+    function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+      }
+      return a;
+    }
+    //-----------------------------------------------------------
+
+    shuffle(pw);
+
     return pw.join('');
 
   } else {
