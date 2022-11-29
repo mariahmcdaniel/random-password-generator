@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Description](#Description)
+- [Usage](#Usage)
 - [Visuals](#Visuals)
 
 ## Description
