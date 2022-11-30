@@ -39,6 +39,11 @@ function generatePassword() {
       containsSpecial = true;
     };
 
+    if (!uppercase && !lowercase && !numbers && !special) {
+      alert('You must choose at least one type of character. Please try again');
+      return generatePassword();
+    }
+
     var baseChars = "";
     if (containsUpper) {
       var randNum = Math.floor(Math.random() * uppercasePool.length);
