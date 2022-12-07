@@ -28,22 +28,22 @@ When you navigate to my [password generator website](https://mariahmcdaniel.gith
 
 - Starting page:
 
-![initial view](assets/images/initialview.png)
+![initial view](./assets/images/initialview.png)
 
 - Specify your password length:
 
-![How many characters](assets/images/howmanychars.png)
+![How many characters](./assets/images/howmanychars.png)
 
 - Error message:
 
-![alert](assets/images/errormessage.png)
+![alert](./assets/images/errormessage.png)
 
 - Choose what types of characters you would like your password to contain:
 
-![uppercase](assets/images/uppercase.png) ![lowercase](assets/images/lowercase.png)
+![uppercase](./assets/images/uppercase.png) ![lowercase](./assets/images/lowercase.png)
 
-![numbers](assets/images/numbers.png)  ![special](assets/images/special.png)
+![numbers](./assets/images/numbers.png)  ![special](./assets/images/special.png)
 
 - Example of final output with a randomly generated password:
 
-![finalview](assets/images/result.png)
+![finalview](./assets/images/result.png)
