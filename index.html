@@ -15,13 +15,14 @@
       <h1>Password Generator</h1>
     </header>
     <div class="card">
-      <div class="card-header">
-        <h2>Generate a Password</h2>
-      </div>
+      <!-- <div class="card-header">
+        <h2></h2>
+      </div> -->
       <div class="card-body">
+        <h3>Options:</h3>
         <form>
         <div class="form-group">
-          <label for="length">Password Length</label>
+          <label for="length">How many characters?</label>
           <input type="number" id="length" min="8" max="128" value="16" />
         </div>
         <div class="form-group">
@@ -37,7 +38,7 @@
           <input type="checkbox" name="charType" value="numbers" id="numbers" />
         </div>
         <div class="form-group">
-          <label for="symbols">Include Special Characters (ie!#$%&()*@...)?</label>
+          <label for="symbols">Include Special Characters? (i.e. !#$%&()*@...)</label>
           <input type="checkbox" name="charType" value="symbols" id="symbols" />
         </div>
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
