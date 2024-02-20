@@ -2,47 +2,75 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
-  var charNum = prompt('How many characters would you like in your password?');
+  // var charNum = prompt('How many characters would you like in your password?');
+  var charNum = document.querySelector("#length").value;
   var uppercasePool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var lowercasePool = 'abcdefghijklmnopqrstuvwxyz';
   var numbersPool = '0123456789';
   var specialPool = '!#$%&()*+,-./:;<=>?@[]^_`{|}~';
   var chooseFrom = '';
+  
+  var containsUpper = false;
+  var containsLower = false;
+  var containsNumber = false;
+  var containsSpecial = false;
 
-  if (charNum >= 8 && charNum <= 128) {
-    var containsUpper = false;
-    var containsLower = false;
-    var containsNumber = false;
-    var containsSpecial = false;
 
-    var uppercase = confirm('Would you like your password to contain uppercase letters?');
-    if (uppercase) {
-      chooseFrom += uppercasePool;
+  
+  Array.prototype.slice.call(document.querySelectorAll("[name='charType']:checked"),0).map(function(v,i,a) { 
+    console.log(v.value);
+    if (v.value === "upper"){
       containsUpper = true;
-    };
-
-    var lowercase = confirm('Would you like your password to contain lowercase letters?');
-    if (lowercase) {
-      chooseFrom += lowercasePool;
-      containsLower = true;
-    };
-
-    var numbers = confirm('Would you like your password to contain numbers?');
-    if (numbers) {
-      chooseFrom += numbersPool;
-      containsNumber = true;
-    };
-
-    var special = confirm('Would you like your password to contain special characters?');
-    if (special) {
-      chooseFrom += specialPool;
-      containsSpecial = true;
-    };
-
-    if (!uppercase && !lowercase && !numbers && !special) {
-      alert('You must choose at least one type of character. Please try again');
-      return generatePassword();
+      chooseFrom += uppercasePool;
     }
+    if (v.value === "lower"){
+      containsLower = true;
+      chooseFrom += lowercasePool;
+    }
+    if (v.value === "numbers"){
+      containsNumber = true;
+      chooseFrom += numbersPool;
+    }
+    if (v.value === "symbols"){
+      containsSpecial = true;
+      chooseFrom += specialPool;
+    }
+    return v.value; 
+  });
+
+//   if (charNum >= 8 && charNum <= 128) {
+//     var containsUpper = false;
+//     var containsLower = false;
+//     var containsNumber = false;
+//     var containsSpecial = false;
+
+//     var uppercase = confirm('Would you like your password to contain uppercase letters?');
+//     if (containsUpper) {
+//       chooseFrom += uppercasePool;
+//     };
+
+// //     var lowercase = confirm('Would you like your password to contain lowercase letters?');
+//     if (containsLower) {
+//       chooseFrom += lowercasePool;
+//       // containsLower = true;
+//     };
+
+// //     var numbers = confirm('Would you like your password to contain numbers?');
+//     if (containsNumber) {
+//       chooseFrom += numbersPool;
+//       // containsNumber = true;
+//     };
+
+//     var special = confirm('Would you like your password to contain special characters?');
+//     if (special) {
+//       chooseFrom += specialPool;
+//       containsSpecial = true;
+//     };
+
+    // if (!containsUpper && !containsLower && !containsNumber && !containsSpecial) {
+    //   alert('You must choose at least one type of character. Please try again');
+    //   return generatePassword();
+    // }
 
     var baseChars = "";
     if (containsUpper) {
@@ -86,13 +114,14 @@ function generatePassword() {
 
     return pw.join('');
 
-  } else {
-    alert("You must enter a number from 8-128, please try again");
-    return generatePassword();
-  };
+//   } else {
+//     alert("You must enter a number from 8-128, please try again");
+//     return generatePassword();
+//   };
 }
 
-function writePassword() {
+function writePassword(e) {
+  e.preventDefault();
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 

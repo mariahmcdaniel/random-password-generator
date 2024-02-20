@@ -19,11 +19,33 @@
         <h2>Generate a Password</h2>
       </div>
       <div class="card-body">
+        <form>
+        <div class="form-group">
+          <label for="length">Password Length</label>
+          <input type="number" id="length" min="8" max="128" value="16" />
+        </div>
+        <div class="form-group">
+          <label for="uppercase">Include Uppercase Letters?</label>
+          <input type="checkbox" name="charType" value="upper" id="uppercase" />
+        </div>
+        <div class="form-group">
+          <label for="lowercase">Include Lowercase Letters?</label>
+          <input type="checkbox" name="charType" value="lower" id="lowercase" />
+        </div>
+        <div class="form-group">
+          <label for="numbers">Include Numbers?</label>
+          <input type="checkbox" name="charType" value="numbers" id="numbers" />
+        </div>
+        <div class="form-group">
+          <label for="symbols">Include Special Characters (ie!#$%&()*@...)?</label>
+          <input type="checkbox" name="charType" value="symbols" id="symbols" />
+        </div>
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
       <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
+        <button type="submit" id="generate" class="btn">Generate Password</button>
       </div>
+    </form>
     </div>
   </div>
   <script src="./assets/js/script.js"></script>
